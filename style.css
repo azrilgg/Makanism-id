@@ -197,17 +197,70 @@ nav a:hover::after {
 
 .about-icons {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap; /* biar responsif */
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+  max-width: 900px; /* batasi biar gak melebar */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
 
 .about-icons div {
   text-align: center;
+  background: #111; /* biar match dengan tema dark website kamu */
+  border: 1px solid rgba(255, 177, 0, 0.2);
+  padding: 22px 18px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 177, 0, 0.1);
+  width: 120px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.about-icons div:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 177, 0, 0.2);
+  background-color: #1a1a1a;
 }
 
 .about-icons i {
   color: #ffb100;
-  font-size: 1.8em;
-  margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.about-icons div:hover i {
+  color: #ff8c00;
+  transform: rotate(-10deg);
+}
+
+.about-icons span {
+  display: block;
+  font-weight: 600;
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  letter-spacing: 0.3px;
+}
+
+/* 🔥 Responsif di HP */
+@media (max-width: 600px) {
+  .about-icons div {
+    width: 45%;
+    padding: 20px 10px;
+  }
+
+  .about-icons i {
+    font-size: 1.8em;
+  }
+
+  .about-icons span {
+    font-size: 0.9rem;
+  }
 }
 
 /* =============================
