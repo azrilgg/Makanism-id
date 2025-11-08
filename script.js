@@ -1,3 +1,10 @@
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro");
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 4000); // 4 detik, biar sinkron sama animasi fade out
+});
+
 // =============================
 // Navbar Scroll Effect
 // =============================
