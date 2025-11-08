@@ -1,43 +1,84 @@
-// Buat teks melingkar
-let circle = document.querySelector('.circle');
-let text = circle.textContent.split('');
-circle.textContent = '';
-text.forEach((char, i) => {
-  let span = document.createElement('span');
-  span.textContent = char;
-  span.style.transform = `rotate(${(360 / text.length) * i}deg)`;
-  circle.appendChild(span);
+// =============================
+// Navbar Scroll Effect
+// =============================
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// Carousel
-let list = document.querySelector('.list');
-let items = document.querySelectorAll('.item');
-let count = items.length;
-let active = 1;
-let width_item = items[active].offsetWidth;
-let prev = document.getElementById('prev');
-let next = document.getElementById('next');
+// =============================
+// Mobile Menu Toggle
+// =============================
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-function runCarousel() {
-  let old_active = document.querySelector('.item.active');
-  if (old_active) old_active.classList.remove('active');
-  items[active].classList.add('active');
-  list.style.transform = `translateX(${-width_item * (active - 1)}px)`;
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+  menuToggle.querySelector("i").classList.toggle("fa-times");
+});
+
+// =============================
+// Scroll Animation
+// =============================
+const animatedElements = document.querySelectorAll("[data-animate]");
+function animateOnScroll() {
+  const triggerBottom = window.innerHeight * 0.85;
+  animatedElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll", animateOnScroll);
+animateOnScroll();
+
+// =============================
+// Testimonial Slider
+// =============================
+const slides = document.querySelectorAll(".slide");
+const dotsContainer = document.querySelector(".dots");
+let index = 0;
+
+function createDots() {
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.addEventListener("click", () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+  dotsContainer.children[0].classList.add("active-dot");
 }
 
-next.onclick = () => {
-  active = active >= count - 1 ? 0 : active + 1;
-  runCarousel();
-};
-prev.onclick = () => {
-  active = active <= 0 ? count - 1 : active - 1;
-  runCarousel();
-};
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  dotsContainer.childNodes.forEach(dot => dot.classList.remove("active-dot"));
+  slides[i].classList.add("active");
+  dotsContainer.children[i].classList.add("active-dot");
+  index = i;
+}
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-  });
+function autoSlide() {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
+createDots();
+setInterval(autoSlide, 5000);
+
+// =============================
+// Reservation Form
+// =============================
+const form = document.getElementById("formReservasi");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("🎉 Terima kasih! Reservasi Anda telah dikonfirmasi oleh Makanism ID.");
+  form.reset();
+});
+
+// =============================
+// Parallax Scroll Effect
+// =============================
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector(".hero");
+  let offset = window.scrollY;
+  hero.style.backgroundPositionY = offset * 0.5 + "px";
 });
