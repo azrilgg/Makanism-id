@@ -581,3 +581,36 @@ nav a:hover::after {
     height: 180px;
   }
   }
+
+.reservation-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.reservation-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  margin-bottom: 18px;
+}
+
+.reservation-input:focus {
+  outline: none;
+  border-color: #ffb100;
+  box-shadow: 0 0 8px rgba(255, 177, 0, 0.3);
+}
+
+.reservation-input::placeholder {
+  color: #aaa;
+  opacity: 0.8;
+}
