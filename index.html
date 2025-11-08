@@ -220,8 +220,16 @@
       <input type="text" placeholder="Nama Lengkap" required>
       <input type="email" placeholder="Email" required>
       <input type="number" placeholder="Jumlah Orang" required>
-      <input type="date" placeholder="Tentukan tanggal" required>
-      <input type="time" min="09:00" max="21:00" required>
+      <!-- Input Tanggal -->
+     <label class="reservation-label">Tanggal Reservasi</label>
+     <input type="text"  class="reservation-input" placeholder="Tentukan tanggal reservasi" 
+     onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required>
+
+     <!-- Input Waktu -->
+    <label class="reservation-label">Waktu Reservasi</label>
+    <input type="text" class="reservation-input" placeholder="Tentukan waktu reservasi" 
+    onfocus="this.type='time'" onblur="if(!this.value)this.type='text'"  required>
+      
       <textarea placeholder="Catatan (opsional)"></textarea>
       <button type="submit" class="btn">Pesan Sekarang</button>
     </form>
