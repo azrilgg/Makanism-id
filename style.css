@@ -614,3 +614,72 @@ nav a:hover::after {
   color: #aaa;
   opacity: 0.8;
 }
+
+/* === INTRO STYLING === */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  color: #ffb100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutIntro 1s ease forwards;
+  animation-delay: 3.8s; /* tampil 3.8 detik */
+  overflow: hidden;
+}
+
+.intro-content {
+  text-align: center;
+  opacity: 0;
+  animation: fadeInIntro 1.2s ease forwards;
+}
+
+.intro-icon {
+  font-size: 60px;
+  color: #ffb100;
+  margin-bottom: 15px;
+  animation: iconPulse 1.6s ease-in-out infinite;
+}
+
+.intro-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #ffb100;
+  animation: textSlide 1.5s ease forwards;
+}
+
+.intro-tagline {
+  font-size: 18px;
+  color: #f2f2f2;
+  opacity: 0;
+  animation: fadeInIntro 2s ease forwards 1.2s;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInIntro {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textSlide {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutIntro {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 10px #ffb100; }
+  50% { transform: scale(1.1); text-shadow: 0 0 25px #ffcc33; }
+     }
