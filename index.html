@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makanism ID | The Ultimate Dining Experience</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- GSAP & Three.js CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-XXXXX-Y');
+  </script>
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader">
+    <div class="loader-bg"></div>
+    <div class="loader-content">
+      <div class="loader-logo-wrapper">
+        <div class="loader-main-logo">
+          <span class="logo-symbol">✨</span>
+          <span class="logo-name">Makanism</span>
+        </div>
+        <div class="loader-sub">Curating Culinary Excellence</div>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Background Container -->
+  <div id="canvas-container"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">✨</span>
+        <span class="logo-text">Makanism</span>
+      </div>
+      <nav id="navMenu">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#specials" class="nav-link">Specials</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#blog" class="nav-link">Journal</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#reservasi" class="nav-btn">Reservation</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-bg-img">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Premium Dining Hero">
+    </div>
+    <div class="hero-content">
+      <div class="hero-label-wrapper">
+        <span class="hero-label-line"></span>
+        <span class="hero-label">The Golden Standard</span>
+        <span class="hero-label-line"></span>
+      </div>
+
+      <div class="hero-promo-thick">
+        <div class="thick-word">EXCLUSIVE</div>
+        <div class="thick-word outline">GOLDEN ERA</div>
+        <div class="thick-word">MANIFESTO</div>
+      </div>
+
+      <h1 class="hero-title-main">
+        <span class="line">Taste The</span>
+        <span class="line text-gold">Extraordinary</span>
+      </h1>
+
+      <p class="hero-desc">Experience a symphony of flavors where culinary art meets modern luxury. Welcome to the
+        future of dining.</p>
+
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">Discover Menu</a>
+        <a href="#reservasi" class="btn btn-outline">Secure a Table</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- STATS COUNTER SECTION -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="15">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="50">0</span>
+          <span class="stat-label">Signature Dishes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="12">0</span>
+          <span class="stat-label">Awards Won</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="98">0</span>
+          <span class="stat-label">% Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY SECTION (NEW) -->
+  <section id="philosophy" class="philosophy section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-text text-center">
+          <span class="section-tag">Professional Standard</span>
+          <h2 class="section-title">Our <span class="text-gold">Philosophy</span></h2>
+          <p class="mb-5" style="max-width: 700px; margin: 0 auto; color: #ccc;">We believe that dining is an art form.
+            Every plate is a canvas, and every ingredient is a color. Our "Professional Standard" ensures that from the
+            moment you step in, you are treated to a world-class experience that sets a new benchmark for culinary
+            excellence.</p>
+
+          <div class="philosophy-grid">
+            <div class="phi-item">
+              <div class="phi-icon"><img src="image/1.png" alt="Quality"></div>
+              <h4>Precision</h4>
+            </div>
+            <div class="phi-item">
+              <div class="phi-icon"><img src="image/2.png" alt="Passion"></div>
+              <h4>Passion</h4>
+            </div>
+            <div class="phi-item">
+              <div class="phi-icon"><img src="image/3.png" alt="Innovation"></div>
+              <h4>Innovation</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPANDED STORY SECTION -->
+  <section id="story" class="about section">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-visual">
+          <div class="image-reveal">
+            <!-- Local Image: 6.jpg -->
+            <img src="image/6.jpg" alt="Fine Dining Interior">
+          </div>
+          <div class="floating-badge">
+            <span>Est. 2010</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-tag">A Heritage of Taste</span>
+          <h2 class="section-title">The Legend Behind the <span class="text-gold">Golden Flavor</span></h2>
+          <div class="story-text-wrapper">
+            <p class="section-text">Makanism ID began in 2010 as a small gathering of passionate culinary experts who
+              shared a single dream: to elevate Indonesian gastronomy to the world stage. Over the past decade, we have
+              transformed from a secret tasting room into a beacon of modern luxury dining.</p>
+            <p class="section-text">Our cuisine is a sensory exploration of Nusantara heritage. We take the ancient
+              secrets of spice and smoke, and refine them with cutting-edge techniques of molecular gastronomy. Every
+              plate is a carefully composed masterpiece, a symphony of texture, aroma, and visual poetry.</p>
+          </div>
+
+          <div class="story-stats-compact">
+            <div class="s-stat">
+              <h4>15+</h4>
+              <span>International Awards</span>
+            </div>
+            <div class="s-stat">
+              <h4>25</h4>
+              <span>World-Class Chefs</span>
+            </div>
+            <div class="s-stat">
+              <h4>100%</h4>
+              <span>Organic Sourcing</span>
+            </div>
+          </div>
+
+          <a href="article.html" class="btn-link">Explore Our Journey <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info-panel">
+          <span class="section-tag">Find Us</span>
+          <h2 class="section-title">Visit the <br> <span class="text-gold">Makanism HQ</span></h2>
+          <p class="contact-desc">Ready to experience the extraordinary? Our doors are open for those who seek culinary
+            perfection.</p>
+
+          <div class="contact-details">
+            <div class="detail-item">
+              <div class="detail-icon"><i class="fas fa-location-dot"></i></div>
+              <div class="detail-text">
+                <h3>Location</h3>
+                <p>Jl. Jendral Sudirman Kav. 52, <br> SCBD, Jakarta Selatan, 12190</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon"><i class="fas fa-phone"></i></div>
+              <div class="detail-text">
+                <h3>Direct Line</h3>
+                <p>+62 (21) 555-MAKAN <br> +62 812 3456 7890</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+              <div class="detail-text">
+                <h3>Email Inquiries</h3>
+                <p>experience@makanism.id <br> concierge@makanism.id</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-visual-panel">
+          <div class="card-3d-wrapper">
+            <div class="contact-card-3d">
+              <div class="card-overlay"></div>
+              <img src="image/10.jpg" alt="Makanism Ambiance">
+              <div class="card-content">
+                <span class="card-tag">Experience</span>
+                <h3>The Private Room</h3>
+                <p>Book our exclusive private dining area for your most important moments.</p>
+                <a href="#reservasi" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEF'S SPECIALS -->
+  <section id="specials" class="specials section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Chef's Choice</span>
+        <h2 class="section-title">Signature <span class="text-gold">Masterpieces</span></h2>
+      </div>
+
+      <div class="specials-slider">
+        <!-- Special Card 1: Steak -->
+        <div class="special-card">
+          <div class="card-image">
+            <img src="image/steak.jpg" alt="Wagyu A5">
+            <div class="price-tag">Rp 1.2jt</div>
+          </div>
+          <div class="card-details">
+            <h3>Wagyu A5 truffle</h3>
+            <p>Imported Japanese Wagyu served with black truffle reduction and gold flakes.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Card 2: Salmon -->
+        <div class="special-card">
+          <div class="card-image">
+            <img src="image/salmon.jpg" alt="Atlantic Salmon">
+            <div class="price-tag">Rp 450k</div>
+          </div>
+          <div class="card-details">
+            <h3>Atlantic Salmon</h3>
+            <p>Pan-seared Atlantic salmon with miso glaze and asparagus foam.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Card 3: Lava Cake -->
+        <div class="special-card">
+          <div class="card-image">
+            <img src="image/kue.jpg" alt="Golden Lava Cake">
+            <div class="price-tag">Rp 180k</div>
+          </div>
+          <div class="card-details">
+            <h3>Golden Lava</h3>
+            <p>Dark chocolate fondant with a molten gold center and vanilla bean gelato.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION (REWORKED) -->
+  <section id="menu" class="menu section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Discover</span>
+        <h2 class="section-title">The <span class="text-gold">Menu</span></h2>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-filter="all">All</button>
+        <button class="menu-tab" data-filter="main">Main Course</button>
+        <button class="menu-tab" data-filter="dessert">Desserts</button>
+        <button class="menu-tab" data-filter="drinks">Beverages</button>
+      </div>
+
+      <div class="menu-grid-v2">
+        <!-- MAINS -->
+        <div class="menu-item-v2" data-category="main">
+          <div class="item-img"><img src="image/nasi.jpg" alt="Nasi Goreng"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Nasi Goreng Signature</h4>
+              <span class="price">Rp 45k</span>
+            </div>
+            <p class="description">Authentic authentic fried rice with signature spices.</p>
+          </div>
+        </div>
+
+        <div class="menu-item-v2" data-category="main">
+          <div class="item-img"><img src="image/pasta.jpg" alt="Carbonara"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Creamy Carbonara</h4>
+              <span class="price">Rp 80k</span>
+            </div>
+            <p class="description">Soft pasta with cream sauce and parmesan cheese.</p>
+          </div>
+        </div>
+
+        <div class="menu-item-v2" data-category="main">
+          <div class="item-img"><img src="image/soup.jpg" alt="Mushroom Soup"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Mushroom Cream Soup</h4>
+              <span class="price">Rp 50k</span>
+            </div>
+            <p class="description">Smooth soup with fresh mushroom aroma and garlic bread.</p>
+          </div>
+        </div>
+
+        <div class="menu-item-v2" data-category="main">
+          <div class="item-img"><img src="image/chicken.jpg" alt="Honey Chicken"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Honey Roasted Chicken</h4>
+              <span class="price">Rp 70k</span>
+            </div>
+            <p class="description">Roasted chicken with spicy honey glaze.</p>
+          </div>
+        </div>
+
+        <div class="menu-item-v2" data-category="main">
+          <div class="item-img"><img src="image/seafood.jpg" alt="Seafood"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Seafood Platter</h4>
+              <span class="price">Rp 110k</span>
+            </div>
+            <p class="description">Shrimp, squid, and fish fillet with lemon butter.</p>
+          </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-item-v2" data-category="dessert">
+          <div class="item-img"><img src="image/pannacotta.jpg" alt="Panna Cotta"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Vanilla Berry Panna Cotta</h4>
+              <span class="price">Rp 48k</span>
+            </div>
+            <p class="description">Silky vanilla pudding with fresh berry sauce.</p>
+          </div>
+        </div>
+
+        <div class="menu-item-v2" data-category="dessert">
+          <div class="item-img"><img src="image/pudding.jpg" alt="Mango Pudding"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Fresh Mango Pudding</h4>
+              <span class="price">Rp 45k</span>
+            </div>
+            <p class="description">Soft pudding with real mango sauce.</p>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-item-v2" data-category="drinks">
+          <div class="item-img"><img src="image/eskopiregal.jpg" alt="Regal Coffee"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Iced Regal Coffee</h4>
+              <span class="price">Rp 42k</span>
+            </div>
+            <p class="description">Creamy milk coffee with regal biscuits.</p>
+          </div>
+        </div>
+
+        <div class="menu-item-v2" data-category="drinks">
+          <div class="item-img"><img src="image/lemonhoney.jpg" alt="Lemon Honey"></div>
+          <div class="item-content">
+            <div class="item-head">
+              <h4>Lemon Honey Ice</h4>
+              <span class="price">Rp 36k</span>
+            </div>
+            <p class="description">Fresh lemon water and natural honey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG / STORIES SECTION -->
+  <section id="blog" class="blog section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Journal</span>
+        <h2 class="section-title">Culinary <span class="text-gold">Stories</span></h2>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-img">
+            <!-- Local Image: 7.jpg -->
+            <img src="image/7.jpg" alt="Blog 1">
+            <span class="date">Oct 12, 2025</span>
+          </div>
+          <div class="blog-content">
+            <h3>The Art of Plating</h3>
+            <p>How visual aesthetics elevate the dining experience to new heights.</p>
+            <a href="article.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-img">
+            <!-- Local Image: 8.jpg -->
+            <img src="image/8.jpg" alt="Blog 2">
+            <span class="date">Sep 28, 2025</span>
+          </div>
+          <div class="blog-content">
+            <h3>Sourcing Sustainable</h3>
+            <p>Our journey to finding the best organic local ingredients.</p>
+            <a href="article.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-img">
+            <!-- Local Image: 9.jpg -->
+            <img src="image/9.jpg" alt="Blog 3">
+            <span class="date">Sep 15, 2025</span>
+          </div>
+          <div class="blog-content">
+            <h3>Cocktail Culture</h3>
+            <p>Exploring the modern twist on classic beverages.</p>
+            <a href="article.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq section">
+    <div class="container">
+      <div class="faq-container">
+        <div class="faq-header">
+          <h2 class="section-title">Frequently Asked <span class="text-gold">Questions</span></h2>
+          <p>Everything you need to know before your visit.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Is there a dress code?</h4>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we encourage Smart Casual attire. We request no beachwear or flip-flops to maintain our elegant
+                atmosphere.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Do I need a reservation?</h4>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Reservations are highly recommended, especially for weekends and dinner service, to guarantee your
+                table.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Do you accommodate dietary restrictions?</h4>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. Please inform your server or note it in your reservation, and our chefs will prepare a meal
+                to suit your needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section id="reservasi" class="reservasi section">
+    <div class="container">
+      <div class="reservation-box">
+        <div class="res-content">
+          <h2 class="section-title">Book Your <span class="text-gold">Table</span></h2>
+          <p>Join us for an unforgettable evening.</p>
+          <form id="formReservasi">
+            <div class="form-group">
+              <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-row">
+              <input type="number" placeholder="Guests" required min="1">
+              <input type="text" placeholder="Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'"
+                required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Time" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'"
+                required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+          </form>
+        </div>
+        <div class="res-image">
+          <!-- Background image applied via CSS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Makanism</h3>
+          <p>Elevating gastronomy since 2025. Experience the difference.</p>
+          <div class="socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#blog">Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4>Visit</h4>
+          <ul>
+            <li>Jl. Sudirman No. 45</li>
+            <li>Jakarta Selatan, ID</li>
+            <li>+62 812 3456 7890</li>
+            <li>hello@makanism.id</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Makanism ID. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
