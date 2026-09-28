@@ -29,16 +29,59 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
+  <!-- Page Transition Overlay -->
+  <div class="page-transition">
+    <div class="page-transition-logo">
+      <img src="image/makanismid.png" alt="Makanism Logo">
+      <span>Makanism</span>
+    </div>
+  </div>
+
     <!-- Progress Bar -->
     <div class="scroll-progress"></div>
 
     <!-- Navigation -->
     <nav class="article-nav">
         <div class="container">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-            <div class="logo-small">Makanism</div>
+            <a href="index.html" class="back-link transition-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="logo-small">
+                <img src="image/makanismid.png" alt="Makanism Logo" class="logo-img">
+                <span>Makanism</span>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
+
+    <!-- FULL-SCREEN MENU -->
+    <div class="fs-menu">
+        <img src="image/10.jpg" alt="Menu BG" class="fs-menu-bg" id="fsMenuBg">
+        <div class="fs-menu-content">
+            <div class="fs-nav-links">
+                <a href="index.html#home" data-bg="image/10.jpg" class="fs-link transition-link">Home</a>
+                <a href="index.html#story" data-bg="image/6.jpg" class="fs-link transition-link">Our Story</a>
+                <a href="index.html#specials" data-bg="image/steak.jpg" class="fs-link transition-link">Specials</a>
+                <a href="index.html#menu" data-bg="image/nasi.jpg" class="fs-link transition-link">The Menu</a>
+                <a href="index.html#blog" data-bg="image/7.jpg" class="fs-link transition-link">Journal</a>
+                <a href="index.html#contact" data-bg="image/11.jpg" class="fs-link transition-link">Contact</a>
+            </div>
+            <div class="fs-info">
+                <h3>Reservations</h3>
+                <p>Experience culinary perfection.<br>Call us at +62 (21) 555-MAKAN<br>or email reserve@makanism.id</p>
+                
+                <h3>Location</h3>
+                <p>Jl. Jendral Sudirman Kav. 52,<br>SCBD, Jakarta Selatan</p>
+
+                <div class="fs-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Article Hero -->
     <header class="article-hero">
@@ -62,11 +105,11 @@
     <!-- Article Content -->
     <article class="article-content section">
         <div class="container text-container">
-            <p class="lead-text">"We eat with our eyes first." It's a cliché for a reason. Before the aroma stimulates
+            <p class="lead-text drop-cap">"We eat with our eyes first." It's a cliché for a reason. Before the aroma stimulates
                 the olfactory nerves, or the tongue detects the balance of salt and acid, the eyes have already judged
                 the dish.</p>
 
-            <p>At Makanism ID, plating is not just decoration; it is an extension of the chef's philosophy. It is the
+            <p class="body-text">At Makanism ID, plating is not just decoration; it is an extension of the chef's philosophy. It is the
                 bridge between the kitchen's chaos and the dining room's serenity. Every element on the plate has a
                 purpose, a story, and a reason for being there.</p>
 
@@ -88,12 +131,12 @@
             <p>Modern luxury is conscious. We garnish with edible flowers grown in our own vertical garden and serve on
                 locally crafted pottery. The beauty of the plate reflects the beauty of our environment.</p>
 
-            <div class="quote-box">
+            <div class="quote-box breakout">
                 <blockquote>"True elegance is not about abundance, but about precision. It is the art of removing the
                     unnecessary until only the essential beauty remains."</blockquote>
             </div>
 
-            <p>Next time you dine with us, take a moment to observe the canvas before you destroy it. Notice the
+            <p class="body-text">Next time you dine with us, take a moment to observe the canvas before you destroy it. Notice the
                 textures, the height, the flow. It is a fleeting masterpiece, created solely for your pleasure.</p>
 
             <!-- Gallery -->
@@ -118,7 +161,7 @@
                     </div>
                     <div class="blog-content">
                         <h3>Sourcing Sustainable</h3>
-                        <a href="#" class="read-more">Read Article</a>
+                        <a href="#" class="read-more transition-link">Read Article</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -128,7 +171,7 @@
                     </div>
                     <div class="blog-content">
                         <h3>Cocktail Culture</h3>
-                        <a href="#" class="read-more">Read Article</a>
+                        <a href="#" class="read-more transition-link">Read Article</a>
                     </div>
                 </article>
             </div>
