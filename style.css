@@ -2501,6 +2501,27 @@ textarea:disabled {
     text-align: left;
   }
 
+  .story-stats-compact {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .s-stat {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
   .article-title {
     font-size: 2.2rem;
   }
@@ -2547,8 +2568,8 @@ textarea:disabled {
   }
 }
 
-/* --- Small phones (max-width: 480px) --- */
-@media (max-width: 480px) {
+/* --- Small phones (max-width: 600px) --- */
+@media (max-width: 600px) {
   .logo {
     font-size: 1.4rem;
   }
