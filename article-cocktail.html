@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Culture | Makanism ID</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="article-page">
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition">
+    <div class="page-transition-logo">
+      <img src="image/makanismid.png" alt="Makanism Logo">
+      <span>Makanism</span>
+    </div>
+  </div>
+
+    <!-- Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="article-nav">
+        <div class="container">
+            <a href="index.html" class="back-link transition-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="logo-small">
+                <img src="image/makanismid.png" alt="Makanism Logo" class="logo-img">
+                <span>Makanism</span>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FULL-SCREEN MENU -->
+    <div class="fs-menu">
+        <img src="image/10.jpg" alt="Menu BG" class="fs-menu-bg" id="fsMenuBg">
+        <div class="fs-menu-content">
+            <div class="fs-nav-links">
+                <a href="index.html#home" data-bg="image/10.jpg" class="fs-link transition-link">Home</a>
+                <a href="index.html#story" data-bg="image/6.jpg" class="fs-link transition-link">Our Story</a>
+                <a href="index.html#specials" data-bg="image/steak.jpg" class="fs-link transition-link">Specials</a>
+                <a href="index.html#menu" data-bg="image/nasi.jpg" class="fs-link transition-link">The Menu</a>
+                <a href="index.html#blog" data-bg="image/7.jpg" class="fs-link transition-link">Journal</a>
+                <a href="index.html#contact" data-bg="image/11.jpg" class="fs-link transition-link">Contact</a>
+            </div>
+            <div class="fs-info">
+                <h3>Reservations</h3>
+                <p>Experience culinary perfection.<br>Call us at +62 (21) 555-MAKAN<br>or email reserve@makanism.id</p>
+                
+                <h3>Location</h3>
+                <p>Jl. Jendral Sudirman Kav. 52,<br>SCBD, Jakarta Selatan</p>
+
+                <div class="fs-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Hero -->
+    <header class="article-hero">
+        <div class="hero-bg-img">
+            <img src="image/9.jpg" alt="Article Hero">
+        </div>
+        <div class="container">
+            <div class="article-header">
+                <span class="article-category">Mixology</span>
+                <h1 class="article-title">Cocktail Culture: <br> A Modern Twist on <span class="text-gold">Classic Beverages</span></h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> Sep 15, 2025</span>
+                    <span><i class="far fa-user"></i> Mixologist Budi</span>
+                    <span><i class="far fa-clock"></i> 3 Min Read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content section">
+        <div class="container text-container">
+            <p class="lead-text drop-cap">"A great cocktail is a conversation in a glass." Mixology has evolved from pouring spirits over ice to a deeply scientific and creative endeavor, pushing the boundaries of what a beverage can be.</p>
+
+            <p class="body-text">At Makanism ID, our bar program is designed to mirror our kitchen's philosophy. We explore the modern twists on classic beverages by introducing unique local ingredients—think pandan-infused rums, kecombrang syrups, and smoked cinnamon bark.</p>
+
+            <h3>The Chemistry of Taste</h3>
+            <p>Every cocktail we serve is precisely measured, balancing acidity, sweetness, bitterness, and alcohol content. We utilize techniques like fat-washing, clarification, and barrel-aging to extract and refine flavors.</p>
+
+            <!-- Visual Breaker -->
+            <div class="article-visuals my-5">
+                <div class="visual-grid">
+                    <img src="image/lemonhoney.jpg" alt="Mixology Detail 1" data-speed="0.9">
+                    <img src="image/eskopiregal.jpg" alt="Mixology Detail 2" data-speed="1.1">
+                </div>
+                <p class="caption text-center mt-2">Crafting the perfect balance.</p>
+            </div>
+
+            <h3>Visual Appeal</h3>
+            <p>Just like our food, the presentation of our cocktails is paramount. From crystal-clear ice carved by hand to the dramatic use of smoke and dry ice, the visual theatricality sets the stage for the first sip.</p>
+
+            <div class="quote-box breakout">
+                <blockquote>"We don't just mix drinks; we curate liquid experiences that challenge your expectations and delight your senses."</blockquote>
+            </div>
+
+            <p class="body-text">The next time you visit, take a seat at the bar. Watch the meticulous craft unfold, and discover how a classic recipe can be completely reimagined for the modern palate.</p>
+
+            <!-- Gallery -->
+            <div class="photo-gallery">
+                <img src="image/3.png" alt="Gallery 1">
+                <img src="image/4.png" alt="Gallery 2">
+                <img src="image/5.png" alt="Gallery 3">
+                <img src="image/12.jpg" alt="Gallery 4">
+            </div>
+        </div>
+    </article>
+
+    <!-- Read Next -->
+    <section class="read-next section">
+        <div class="container">
+            <h3 class="text-center mb-5">More Stories</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="image/7.jpg" alt="Blog 1">
+                        <span class="date">Oct 12, 2025</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Art of Plating</h3>
+                        <a href="article.html" class="read-more transition-link">Read Article</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="image/8.jpg" alt="Blog 2">
+                        <span class="date">Sep 28, 2025</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Sourcing Sustainable</h3>
+                        <a href="article-sustainable.html" class="read-more transition-link">Read Article</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 Makanism ID. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
