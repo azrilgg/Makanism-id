@@ -41,42 +41,64 @@
 
   <!-- Loading Screen -->
   <div class="loader">
-    <div class="loader-bg"></div>
     <div class="loader-content">
-      <div class="loader-logo-wrapper">
-        <div class="loader-main-logo">
-          <span class="logo-symbol">✨</span>
-          <span class="logo-name">Makanism</span>
-        </div>
-        <div class="loader-sub">Curating Culinary Excellence</div>
+      <div class="loader-logo">
+        <img src="image/makanismid.png" alt="Makanism Logo">
       </div>
-      <div class="loader-bar">
+      <div class="loader-counter"><span id="loader-count">1</span><span class="percent">%</span></div>
+      <div class="loader-progress-bar">
         <div class="loader-progress"></div>
       </div>
+      <div class="loader-text">Makanism</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition">
+    <div class="page-transition-logo">
+      <img src="image/makanismid.png" alt="Makanism Logo">
+      <span>Makanism</span>
     </div>
   </div>
 
   <!-- 3D Background Container -->
   <div id="canvas-container"></div>
 
+  <!-- FULL-SCREEN MENU -->
+  <div class="fs-menu">
+    <img src="image/10.jpg" alt="Menu BG" class="fs-menu-bg" id="fsMenuBg">
+    <div class="fs-menu-content">
+      <div class="fs-nav-links">
+        <a href="#home" data-bg="image/10.jpg" class="fs-link">Home</a>
+        <a href="#story" data-bg="image/6.jpg" class="fs-link">Our Story</a>
+        <a href="#specials" data-bg="image/steak.jpg" class="fs-link">Specials</a>
+        <a href="#menu" data-bg="image/nasi.jpg" class="fs-link">The Menu</a>
+        <a href="#blog" data-bg="image/7.jpg" class="fs-link">Journal</a>
+        <a href="#contact" data-bg="image/11.jpg" class="fs-link">Contact</a>
+      </div>
+      <div class="fs-info">
+        <h3>Reservations</h3>
+        <p>Experience culinary perfection.<br>Call us at +62 (21) 555-MAKAN<br>or email reserve@makanism.id</p>
+
+        <h3>Location</h3>
+        <p>Jl. Jendral Sudirman Kav. 52,<br>SCBD, Jakarta Selatan</p>
+
+        <div class="fs-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container">
       <div class="logo">
-        <span class="logo-icon">✨</span>
+        <img src="image/makanismid.png" alt="Makanism Logo" class="logo-img">
         <span class="logo-text">Makanism</span>
       </div>
-      <nav id="navMenu">
-        <ul>
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#story" class="nav-link">Our Story</a></li>
-          <li><a href="#specials" class="nav-link">Specials</a></li>
-          <li><a href="#menu" class="nav-link">Menu</a></li>
-          <li><a href="#blog" class="nav-link">Journal</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-          <li><a href="#reservasi" class="nav-btn">Reservation</a></li>
-        </ul>
-      </nav>
       <div class="menu-toggle" id="menuToggle">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -217,7 +239,8 @@
             </div>
           </div>
 
-          <a href="article.html" class="btn-link">Explore Our Journey <i class="fas fa-arrow-right"></i></a>
+          <a href="article.html" class="btn-link transition-link">Explore Our Journey <i
+              class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -289,59 +312,160 @@
       <div class="section-header text-center">
         <span class="section-tag">Chef's Choice</span>
         <h2 class="section-title">Signature <span class="text-gold">Masterpieces</span></h2>
+        <p class="section-subtitle">Each dish is a labor of love, crafted by our award-winning culinary team using the
+          finest ingredients from around the globe.</p>
       </div>
 
       <div class="specials-slider">
         <!-- Special Card 1: Steak -->
-        <div class="special-card">
+        <div class="special-card" data-special="wagyu">
           <div class="card-image">
             <img src="image/steak.jpg" alt="Wagyu A5">
             <div class="price-tag">Rp 1.2jt</div>
+            <div class="card-badge">Chef's Favorite</div>
           </div>
           <div class="card-details">
-            <h3>Wagyu A5 truffle</h3>
+            <h3>Wagyu A5 Truffle</h3>
             <p>Imported Japanese Wagyu served with black truffle reduction and gold flakes.</p>
-            <div class="rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="card-meta">
+              <span class="meta-item"><i class="fas fa-clock"></i> 45 min</span>
+              <span class="meta-item"><i class="fas fa-fire"></i> 850 kcal</span>
+            </div>
+            <div class="card-footer">
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span class="rating-text">5.0</span>
+              </div>
+              <button class="btn-view-detail" data-special="wagyu">View Details</button>
             </div>
           </div>
         </div>
 
         <!-- Special Card 2: Salmon -->
-        <div class="special-card">
+        <div class="special-card" data-special="salmon">
           <div class="card-image">
             <img src="image/salmon.jpg" alt="Atlantic Salmon">
             <div class="price-tag">Rp 450k</div>
+            <div class="card-badge">Best Seller</div>
           </div>
           <div class="card-details">
             <h3>Atlantic Salmon</h3>
             <p>Pan-seared Atlantic salmon with miso glaze and asparagus foam.</p>
-            <div class="rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <div class="card-meta">
+              <span class="meta-item"><i class="fas fa-clock"></i> 30 min</span>
+              <span class="meta-item"><i class="fas fa-fire"></i> 620 kcal</span>
+            </div>
+            <div class="card-footer">
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-text">4.5</span>
+              </div>
+              <button class="btn-view-detail" data-special="salmon">View Details</button>
             </div>
           </div>
         </div>
 
         <!-- Special Card 3: Lava Cake -->
-        <div class="special-card">
+        <div class="special-card" data-special="lava">
           <div class="card-image">
             <img src="image/kue.jpg" alt="Golden Lava Cake">
             <div class="price-tag">Rp 180k</div>
+            <div class="card-badge">New</div>
           </div>
           <div class="card-details">
             <h3>Golden Lava</h3>
             <p>Dark chocolate fondant with a molten gold center and vanilla bean gelato.</p>
-            <div class="rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="card-meta">
+              <span class="meta-item"><i class="fas fa-clock"></i> 25 min</span>
+              <span class="meta-item"><i class="fas fa-fire"></i> 480 kcal</span>
+            </div>
+            <div class="card-footer">
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span class="rating-text">5.0</span>
+              </div>
+              <button class="btn-view-detail" data-special="lava">View Details</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- SPECIAL DETAIL MODAL -->
+  <div class="special-modal" id="specialModal">
+    <div class="special-modal-overlay"></div>
+    <div class="special-modal-content">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImg" src="" alt="">
+          <div class="modal-price" id="modalPrice"></div>
+        </div>
+        <div class="modal-info">
+          <span class="modal-badge" id="modalBadge"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-desc" id="modalDesc"></p>
+
+          <div class="modal-details-grid">
+            <div class="modal-detail-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <span class="detail-label">Prep Time</span>
+                <span class="detail-value" id="modalPrepTime"></span>
+              </div>
+            </div>
+            <div class="modal-detail-item">
+              <i class="fas fa-fire"></i>
+              <div>
+                <span class="detail-label">Calories</span>
+                <span class="detail-value" id="modalCalories"></span>
+              </div>
+            </div>
+            <div class="modal-detail-item">
+              <i class="fas fa-utensils"></i>
+              <div>
+                <span class="detail-label">Serves</span>
+                <span class="detail-value" id="modalServes"></span>
+              </div>
+            </div>
+            <div class="modal-detail-item">
+              <i class="fas fa-leaf"></i>
+              <div>
+                <span class="detail-label">Origin</span>
+                <span class="detail-value" id="modalOrigin"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4><i class="fas fa-list"></i> Key Ingredients</h4>
+            <div class="ingredient-tags" id="modalIngredients"></div>
+          </div>
+
+          <div class="modal-section">
+            <h4><i class="fas fa-hat-chef fas fa-hat-wizard"></i> Chef's Note</h4>
+            <p class="chef-note" id="modalChefNote"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4><i class="fas fa-wine-glass-alt"></i> Pairing Suggestion</h4>
+            <p class="pairing-text" id="modalPairing"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4><i class="fas fa-exclamation-triangle"></i> Allergen Info</h4>
+            <p class="allergen-text" id="modalAllergen"></p>
+          </div>
+
+          <a href="#reservasi" class="btn btn-primary modal-cta" id="modalCta">Reserve & Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- MENU SECTION (REWORKED) -->
   <section id="menu" class="menu section">
@@ -482,7 +606,7 @@
           <div class="blog-content">
             <h3>The Art of Plating</h3>
             <p>How visual aesthetics elevate the dining experience to new heights.</p>
-            <a href="article.html" class="read-more">Read Article</a>
+            <a href="article.html" class="read-more transition-link">Read Article</a>
           </div>
         </article>
 
@@ -495,7 +619,7 @@
           <div class="blog-content">
             <h3>Sourcing Sustainable</h3>
             <p>Our journey to finding the best organic local ingredients.</p>
-            <a href="article.html" class="read-more">Read Article</a>
+            <a href="article-sustainable.html" class="read-more transition-link">Read Article</a>
           </div>
         </article>
 
@@ -508,7 +632,7 @@
           <div class="blog-content">
             <h3>Cocktail Culture</h3>
             <p>Exploring the modern twist on classic beverages.</p>
-            <a href="article.html" class="read-more">Read Article</a>
+            <a href="article-cocktail.html" class="read-more transition-link">Read Article</a>
           </div>
         </article>
       </div>
@@ -563,27 +687,47 @@
   <section id="reservasi" class="reservasi section">
     <div class="container">
       <div class="reservation-box">
-        <div class="res-content">
-          <h2 class="section-title">Book Your <span class="text-gold">Table</span></h2>
-          <p>Join us for an unforgettable evening.</p>
+        <div class="res-content" id="resContent">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+            <h2 class="section-title" style="margin-bottom: 10px;">Book Your <span class="text-gold">Table</span></h2>
+            <div id="bookingStatus" class="booking-status loading">Status: Checking...</div>
+          </div>
+          <p>Join us for an unforgettable evening. Secure your table safely and quickly.</p>
+
           <form id="formReservasi">
             <div class="form-group">
-              <input type="text" placeholder="Full Name" required>
+              <input type="text" id="resName" name="resName" placeholder="Full Name (Letters only)" required
+                pattern="[A-Za-z\s]{3,50}" title="Letters only, max 50 characters for safety.">
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Email Address" required>
+              <input type="email" id="resEmail" name="resEmail" placeholder="Email Address" required maxlength="50">
+            </div>
+            <div class="form-group">
+              <input type="tel" id="resPhone" name="resPhone" placeholder="Phone Number (e.g., +628...)" required
+                pattern="[\+]?[0-9\s\-]{9,15}" title="Valid phone number required.">
             </div>
             <div class="form-row">
-              <input type="number" placeholder="Guests" required min="1">
-              <input type="text" placeholder="Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'"
-                required>
+              <input type="number" id="resGuests" name="resGuests" placeholder="Guests" required min="1" max="20">
+              <input type="text" id="resDate" name="resDate" placeholder="Date" onfocus="this.type='date'"
+                onblur="if(!this.value)this.type='text'" required>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Time" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'"
-                required>
+              <input type="text" id="resTime" name="resTime" placeholder="Time" onfocus="this.type='time'"
+                onblur="if(!this.value)this.type='text'" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+            <button type="submit" class="btn btn-primary btn-block" id="btnSubmitBooking">Confirm Secure
+              Reservation</button>
+            <div class="security-badge"><i class="fas fa-shield-alt"></i> Encrypted & Protected against DDoS/Injection
+            </div>
           </form>
+        </div>
+
+        <!-- SUCCESS OVERLAY (Hidden by default) -->
+        <div class="res-success-overlay" id="resSuccessOverlay">
+          <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Booking Confirmed!</h3>
+          <p id="successMessage">Thank you! Your table is secured.</p>
+          <button type="button" class="btn btn-outline" id="btnBookAnother">Book Another Table</button>
         </div>
         <div class="res-image">
           <!-- Background image applied via CSS -->
